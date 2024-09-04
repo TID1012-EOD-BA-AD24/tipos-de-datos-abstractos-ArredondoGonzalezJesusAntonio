@@ -17,22 +17,50 @@ public class Conjunto {
 	   return (cardinal == 0);
 	}
 	//añade un elemento si no está en el conjunto
-	public Conjunto añadir(Object elemento)
+	public void añadir(Object elemento)
 	{
 		//coloque aquí el código faltante
-		
-		
+		if(!pertenece(elemento)){
+            // Verificar si hay posiciones libres
+            if(cardinal == capacidad){
+                Object [] nuevoCto;
+                nuevoCto = new Object[capacidad + M];
+                for(int k = 0; k < capacidad; k++){
+                    nuevoCto[k] = cto[k];
+                }
+                capacidad += M;
+                cto = nuevoCto;
+            }
+            cto[cardinal++] = elemento;
+        }
 	}
 	//quita el elemento del conjunto
 
-	public Conjunto retirar(Object elemento)
+	public void retirar(Object elemento)
 	{
 		//coloque aquí el código faltante
+		if(pertenece(elemento)){
+            int k = 0;
+            while (!cto[k].equals(elemento)){
+            k++;
+            }
+            for(;k<cardinal;k++){
+                cto[k] = cto[k+1];
+            }
+            cardinal--;
+        }
 	}
 	//busca si un elemento pertenece al conjunto
 	public boolean pertenece(Object elemento)
 	{
 		//coloque aquí el código faltante
+		int k = 0;
+        boolean encontrado = false;
+        while(k<cardinal && !encontrado){
+            encontrado = cto[k].equals(elemento);
+            k++;
+        }
+        return encontrado;
 	}
 	//devuelve el número de elementos
 	public int cardinal()

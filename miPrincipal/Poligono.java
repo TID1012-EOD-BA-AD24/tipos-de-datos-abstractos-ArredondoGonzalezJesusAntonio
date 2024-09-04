@@ -22,7 +22,8 @@ public class Poligono {
 			Punto punto = new Punto(valorX,valorY);
 			this.arreglo[i]=punto;
 		}
-		this.arreglo[N]=this.arreglo[0];	
+		this.arreglo[N]=this.arreglo[0];
+		entrada.close();	
 	}
 	public void DesplegarArreglo() {
 		for (int i=0;i<this.arreglo.length-1;i++) {
@@ -35,9 +36,19 @@ public class Poligono {
 	}
 	public double calcularPerimetro() {
 		//coloca aquí el código faltante
+		double perimetro = 0;
+		for(int i=0; i<this.arreglo.length-1;i++){
+			perimetro += this.arreglo[i].distancia(this.arreglo[i+1]);
+		}
+		return perimetro;
 	}
 	public double calcularPerimetro(Poligono a) {
 		//coloca aquí el código faltante
+		double perimetro = 0;
+		for(int i=0; i<this.arreglo.length-1;i++){
+			perimetro += this.arreglo[i].distancia(this.arreglo[i+1]);
+		}
+		return perimetro;
 	}
 	
 

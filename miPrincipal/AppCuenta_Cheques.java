@@ -43,6 +43,7 @@ public class AppCuenta_Cheques{
                 default:
                     System.out.println("Opción no válida");
             }
+            scanner.close();
         }
         
     }
