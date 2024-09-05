@@ -33,6 +33,7 @@ public class Punto{
 		public void setX(int valor)
 		{
 		   //coloca el codigo faltante
+		   this.x = valor;
 		}
 		public void setY(int valor)
 		{

@@ -38,6 +38,7 @@ public class Matriz {
             throw new PosicionIlegalException();
         }
         //coloca aquí el código faltante
+        matriz[r][c] = valor;
 
     }
     public int infoMat(int r, int c) throws PosicionIlegalException{ 
@@ -45,7 +46,7 @@ public class Matriz {
             throw new PosicionIlegalException();
         }
         //coloca aquí el código faltante
-        return matriz[n][m];
+        return matriz[r][c];
     }
     public int filasMat(){
         return n;
